@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Stewart">
+  <link
+    name="Lower">
+    <inertial>
+      <origin
+        xyz="-0.010389 -0.15074 -0.22968"
+        rpy="0 0 0" />
+      <mass
+        value="19.55" />
+      <inertia
+        ixx="2.9384"
+        ixy="2.7079E-11"
+        ixz="6.3929E-11"
+        iyy="2.9384"
+        iyz="9.1516E-11"
+        izz="4.5968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/Lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/Lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="C1_1">
+    <inertial>
+      <origin
+        xyz="0.13316 -0.072357 -0.012797"
+        rpy="0 0 0" />
+      <mass
+        value="0.039475" />
+      <inertia
+        ixx="1.0228E-05"
+        ixy="-2.0586E-07"
+        ixz="-7.6717E-11"
+        iyy="1.0698E-05"
+        iyz="-1.6758E-10"
+        izz="1.064E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_L"
+    type="continuous">
+    <origin
+      xyz="0.40602 -0.075625 -0.31782"
+      rpy="1.8677 0 -1.5708" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V1">
+    <inertial>
+      <origin
+        xyz="0.16591 0.14292 0.011473"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="1.2062E-15"
+        iyy="0.014836"
+        iyz="8.0014E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_1"
+    type="revolute">
+    <origin
+      xyz="0.038976 0.019698 -0.0013241"
+      rpy="3.1416 0 1.1891" />
+    <parent
+      link="C1_1" />
+    <child
+      link="V1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P1">
+    <inertial>
+      <origin
+        xyz="-0.09737 -0.097635 0.13488"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="-1.5892E-10"
+        ixz="-2.5525E-09"
+        iyy="0.0010739"
+        iyz="-1.4724E-12"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy1"
+    type="prismatic">
+    <origin
+      xyz="0.5203 -0.011845 0.094844"
+      rpy="-2.7218 0 0" />
+    <parent
+      link="V1" />
+    <child
+      link="P1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_1">
+    <inertial>
+      <origin
+        xyz="-0.09765 0.16784 -0.084374"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="7.7883E-19"
+        ixz="-5.7773E-21"
+        iyy="9.4811E-06"
+        iyz="-1.7152E-20"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_1"
+    type="revolute">
+    <origin
+      xyz="0.24741 -0.013261 -0.01842"
+      rpy="1.5708 1.1358 3.1416" />
+    <parent
+      link="P1" />
+    <child
+      link="C2_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="Upper">
+    <inertial>
+      <origin
+        xyz="-0.081611 -0.10844 -0.35699"
+        rpy="0 0 0" />
+      <mass
+        value="21.508" />
+      <inertia
+        ixx="4.6524"
+        ixy="-0.00019502"
+        ixz="-0.00014635"
+        iyy="4.6523"
+        iyz="-0.00019478"
+        izz="5.9442" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/Upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/Upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_U"
+    type="continuous">
+    <origin
+      xyz="-0.031108 0.15944 0.39527"
+      rpy="1.3323 0.51126 -0.11838" />
+    <parent
+      link="C2_1" />
+    <child
+      link="Upper" />
+    <axis
+      xyz="-0.86603 -0.5 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C1_2">
+    <inertial>
+      <origin
+        xyz="-0.096319 -0.07985 0.0048174"
+        rpy="0 0 0" />
+      <mass
+        value="0.039475" />
+      <inertia
+        ixx="1.0228E-05"
+        ixy="-2.0589E-07"
+        ixz="-7.0825E-11"
+        iyy="1.0698E-05"
+        iyz="-1.6668E-10"
+        izz="1.064E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_L"
+    type="continuous">
+    <origin
+      xyz="0.41146 0.0036222 -0.30832"
+      rpy="1.2738 0 1.5708" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V2">
+    <inertial>
+      <origin
+        xyz="0.069169 -0.063387 0.0025012"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="1.9191E-16"
+        iyy="0.014836"
+        iyz="2.0275E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_2"
+    type="revolute">
+    <origin
+      xyz="0.036023 0.026319 0.0073184"
+      rpy="-3.1416 0 1.1991" />
+    <parent
+      link="C1_2" />
+    <child
+      link="V2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P2">
+    <inertial>
+      <origin
+        xyz="-0.23137 0.068491 -0.081051"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="1.1273E-10"
+        ixz="2.5778E-09"
+        iyy="0.0010739"
+        iyz="-1.1562E-12"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy2"
+    type="prismatic">
+    <origin
+      xyz="0.55483 -0.04494 -0.099551"
+      rpy="2.7176 0 0" />
+    <parent
+      link="V2" />
+    <child
+      link="P2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_2">
+    <inertial>
+      <origin
+        xyz="0.0019344 0.27073 -0.06849"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="8.2009E-19"
+        ixz="-5.3355E-21"
+        iyy="9.4811E-06"
+        iyz="3.3881E-21"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_2"
+    type="revolute">
+    <origin
+      xyz="0.24912 0 0.024272"
+      rpy="-1.5708 -1.1399 -3.1416" />
+    <parent
+      link="P2" />
+    <child
+      link="C2_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C1_3">
+    <inertial>
+      <origin
+        xyz="-0.060265 -0.20142 0.18103"
+        rpy="0 0 0" />
+      <mass
+        value="0.039475" />
+      <inertia
+        ixx="1.0228E-05"
+        ixy="-2.0589E-07"
+        ixz="-7.1776E-11"
+        iyy="1.0698E-05"
+        iyz="-1.6867E-10"
+        izz="1.064E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J3_L"
+    type="continuous">
+    <origin
+      xyz="-0.19038 0.39762 -0.13811"
+      rpy="1.8641 0 0.5236" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V3">
+    <inertial>
+      <origin
+        xyz="-0.026229 0.008451 -0.1767"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="-1.9617E-16"
+        iyy="0.014836"
+        iyz="-2.2985E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_3"
+    type="revolute">
+    <origin
+      xyz="0.039457 0.019856 0.0043363"
+      rpy="-3.1416 0 1.2007" />
+    <parent
+      link="C1_3" />
+    <child
+      link="V3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P3">
+    <inertial>
+      <origin
+        xyz="-0.24186 0.070679 0.1186"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="-1.1739E-10"
+        ixz="-2.5902E-09"
+        iyy="0.0010739"
+        iyz="-1.3041E-12"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy3"
+    type="prismatic">
+    <origin
+      xyz="0.46873 0.01326 -0.0395"
+      rpy="-2.7162 0 0" />
+    <parent
+      link="V3" />
+    <child
+      link="P3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_3">
+    <inertial>
+      <origin
+        xyz="0.03486 0.27073 0.068496"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="8.2091E-19"
+        ixz="1.7745E-21"
+        iyy="9.4811E-06"
+        iyz="-8.4703E-22"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_3"
+    type="revolute">
+    <origin
+      xyz="0.25266 0.0021823 0.044181"
+      rpy="1.5708 1.1437 3.1416" />
+    <parent
+      link="P3" />
+    <child
+      link="C2_3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C1_4">
+    <inertial>
+      <origin
+        xyz="0.096929 -0.20892 -0.18704"
+        rpy="0 0 0" />
+      <mass
+        value="0.039475" />
+      <inertia
+        ixx="1.0228E-05"
+        ixy="-2.059E-07"
+        ixz="-7.3253E-11"
+        iyy="1.0698E-05"
+        iyz="-1.5704E-10"
+        izz="1.064E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4_L"
+    type="continuous">
+    <origin
+      xyz="-0.26095 0.36102 -0.12919"
+      rpy="1.2775 0 -2.618" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V4">
+    <inertial>
+      <origin
+        xyz="0.020742 0.16443 0.1857"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="-1.2077E-15"
+        iyy="0.014836"
+        iyz="-7.9906E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_4"
+    type="revolute">
+    <origin
+      xyz="0.037382 0.026037 -0.0013417"
+      rpy="3.1416 0 1.1868" />
+    <parent
+      link="C1_4" />
+    <child
+      link="V4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P4">
+    <inertial>
+      <origin
+        xyz="-0.097359 -0.09438 -0.18771"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="6.5629E-11"
+        ixz="2.5674E-09"
+        iyy="0.0010739"
+        iyz="-2.2736E-13"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy4"
+    type="prismatic">
+    <origin
+      xyz="0.37499 -0.0088605 0.052719"
+      rpy="2.722 0 0" />
+    <parent
+      link="V4" />
+    <child
+      link="P4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_4">
+    <inertial>
+      <origin
+        xyz="-0.081187 0.16153 0.1129"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="7.5131E-19"
+        ixz="-2.1209E-21"
+        iyy="9.4811E-06"
+        iyz="1.44E-20"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_4"
+    type="revolute">
+    <origin
+      xyz="0.24893 0.01852 -0.052245"
+      rpy="-1.5708 -1.138 3.1416" />
+    <parent
+      link="P4" />
+    <child
+      link="C2_4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C1_5">
+    <inertial>
+      <origin
+        xyz="-0.092218 -0.19001 -0.05757"
+        rpy="0 0 0" />
+      <mass
+        value="0.039475" />
+      <inertia
+        ixx="1.0228E-05"
+        ixy="-2.059E-07"
+        ixz="-1.0659E-10"
+        iyy="1.0698E-05"
+        iyz="-1.725E-10"
+        izz="1.064E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J5_L"
+    type="continuous">
+    <origin
+      xyz="-0.3112 -0.37123 -0.21697"
+      rpy="1.8546 0 2.618" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_5" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V5">
+    <inertial>
+      <origin
+        xyz="-0.035895 -0.012891 0.057796"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="1.8921E-16"
+        iyy="0.014836"
+        iyz="1.9082E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_5"
+    type="revolute">
+    <origin
+      xyz="0.033005 0.031475 0.00022614"
+      rpy="-3.1416 0 1.1908" />
+    <parent
+      link="C1_5" />
+    <child
+      link="V5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P5">
+    <inertial>
+      <origin
+        xyz="-0.1702 -0.069482 -0.041968"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="-1.1798E-10"
+        ixz="-2.5558E-09"
+        iyy="0.0010739"
+        iyz="-1.1964E-12"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy5"
+    type="prismatic">
+    <origin
+      xyz="0.38811 -0.069642 -0.0090013"
+      rpy="-2.7185 0 0" />
+    <parent
+      link="V5" />
+    <child
+      link="P5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_5">
+    <inertial>
+      <origin
+        xyz="0.11841 0.15336 -0.11139"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="7.8264E-19"
+        ixz="9.6403E-21"
+        iyy="9.4811E-06"
+        iyz="2.0011E-20"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_5"
+    type="revolute">
+    <origin
+      xyz="0.25191 0.041912 0.0090469"
+      rpy="1.5708 1.1477 -3.1416" />
+    <parent
+      link="P5" />
+    <child
+      link="C2_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C1_6">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C1_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J6_L"
+    type="continuous">
+    <origin
+      xyz="-0.24606 -0.41387 -0.23539"
+      rpy="1.287 0 -0.5236" />
+    <parent
+      link="Lower" />
+    <child
+      link="C1_6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="V6">
+    <inertial>
+      <origin
+        xyz="0.076471 0.17206 -0.059333"
+        rpy="0 0 0" />
+      <mass
+        value="0.66993" />
+      <inertia
+        ixx="0.00041123"
+        ixy="0.00096455"
+        ixz="-1.9768E-16"
+        iyy="0.014836"
+        iyz="-1.9082E-17"
+        izz="0.015086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/V6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1_6"
+    type="revolute">
+    <origin
+      xyz="0.041675 0.014229 -0.00079182"
+      rpy="3.1416 0 1.1947" />
+    <parent
+      link="C1_6" />
+    <child
+      link="V6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="P6">
+    <inertial>
+      <origin
+        xyz="-0.18107 -0.11101 0.024617"
+        rpy="0 0 0" />
+      <mass
+        value="0.054892" />
+      <inertia
+        ixx="1.0485E-06"
+        ixy="1.0433E-10"
+        ixz="2.5561E-09"
+        iyy="0.0010739"
+        iyz="-8.9579E-13"
+        izz="0.0010739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/P6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Cy6"
+    type="prismatic">
+    <origin
+      xyz="0.51029 0.070425 0.0088417"
+      rpy="2.7169 0 0" />
+    <parent
+      link="V6" />
+    <child
+      link="P6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="C2_6">
+    <inertial>
+      <origin
+        xyz="0.13488 0.15967 0.082895"
+        rpy="0 0 0" />
+      <mass
+        value="0.034924" />
+      <inertia
+        ixx="8.0687E-06"
+        ixy="7.7468E-19"
+        ixz="-5.2683E-21"
+        iyy="9.4811E-06"
+        iyz="-2.2129E-20"
+        izz="8.4038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.52549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Stewart/meshes/C2_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2_6"
+    type="revolute">
+    <origin
+      xyz="0.25344 -0.028119 -0.039147"
+      rpy="-1.5708 -1.1492 -3.1416" />
+    <parent
+      link="P6" />
+    <child
+      link="C2_6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+</robot>
